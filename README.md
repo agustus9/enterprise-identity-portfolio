@@ -1,6 +1,6 @@
-# 🏢 SailPoint IdentityNow (Identity Security Cloud) Portfolio
+# 🏢 Enterprise Identity Security Portfolio
 
-Welcome to my Identity Governance & Administration (IGA) implementation portfolio. This repository documents hands-on business scenarios, configurations, and automation workflows engineered within **SailPoint IdentityNow**.
+Welcome to my Identity Governance & Administration (IGA) and Access Management portfolio. This repository documents hands-on business scenarios, configurations, and automation workflows engineered within **SailPoint**, **Microsoft Entra ID**, and **Okta**.
 
 ## 📂 Portfolio Contents
 
@@ -24,11 +24,11 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 * **Objective:** Step-by-step builds of User Management, Group Membership rules, and Lifecycle Management (LCM) in the Okta Admin Portal.
 * **Key Skills:** Okta Admin, SAML 2.0, SCIM, Salesforce Provisioning, Lifecycle Management.
 
-
-
-
 ---
 ## 🎓 Certifications & Professional Alignment
 * **Certified Identity Governance Expert (CIGE)**
 * **Certified Identity and Access Manager (CIAM)**
+* **SailPoint Identity Security Leader**
+* **Microsoft Identity and Access Administrator (SC-300)**
+
 
