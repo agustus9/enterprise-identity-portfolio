@@ -12,17 +12,17 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 * **Objective:** Automating lifecycle processes via Event Triggers and transforming HR data into normalized identity attributes.
 * **Key Skills:** JSON Transforms, Lifecycle State Management, Workflow triggers.
 
+### [03. Workday HR-Driven Lifecycle Automation](./03-Workday-Integration)
+* **Objective:** Managing HR-driven Joiner-Mover-Leaver (JML) automation with Source-to-Target identity profiles.
+* **Key Skills:** Attribute mapping, Account correlation rules, Birthright Access provisioning.
+
 ### [04. Entra ID Zero Trust & Access Control](./04-Entra-Conditional-Access)
 * **Objective:** Engineering Conditional Access policies and Privileged Identity Management (PIM) for identity defense.
 * **Key Skills:** Entra ID, Just-in-Time access, MFA enforcement, Zero Trust (NIST 800-207).
 
-### [05. Okta Workforce Identity & SAML Federation](../IAM-Cloud-Security-Portfolio)
-* **Objective:** Configuring SP-Initiated SAML, automated Salesforce provisioning, and lifecycle management (LCM).
-* **Key Skills:** Okta Admin, SAML 2.0, SCIM, Lifecycle Management, SaaS Integration.
-
-### 03. Workday Integration *(Coming Soon)*
-* **Objective:** Managing HR-driven Joiner-Mover-Leaver (JML) automation with Source-to-Target identity profiles.
-* **Key Skills:** Attribute mapping, Account correlation rules, Birthright Access provisioning.
+### [05. Okta Workforce Identity & SAML Federation](./05-Okta-SAML-Provisioning)
+* **Objective:** Step-by-step builds of User Management, Group Membership rules, and Lifecycle Management (LCM) in the Okta Admin Portal.
+* **Key Skills:** Okta Admin, SAML 2.0, SCIM, Salesforce Provisioning, Lifecycle Management.
 
 
 
