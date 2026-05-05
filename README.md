@@ -8,13 +8,14 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 * **Objective:** Building targeted Elasticsearch queries to capture high-risk identities and launching manager-driven access reviews.
 * **Key Skills:** SailPoint Search Query syntax, Campaign Management, Access Revocation.
 
-### 02. Workflows & Transforms *(Coming Soon)*
+### [02. Workflows & Transforms](./02-IDN-Workflows-Transforms)
 * **Objective:** Automating lifecycle processes via Event Triggers and transforming HR data into normalized identity attributes.
 * **Key Skills:** JSON Transforms, Lifecycle State Management, Workflow triggers.
 
 ### 03. Workday Integration *(Coming Soon)*
 * **Objective:** Managing HR-driven Joiner-Mover-Leaver (JML) automation with Source-to-Target identity profiles.
 * **Key Skills:** Attribute mapping, Account correlation rules, Birthright Access provisioning.
+
 
 ---
 ## 🎓 Certifications & Professional Alignment
