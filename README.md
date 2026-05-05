@@ -20,4 +20,4 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 ## 🎓 Certifications & Professional Alignment
 * **Certified Identity Governance Expert (CIGE)**
 * **Certified Identity and Access Manager (CIAM)**
-* **Certified Information Systems Security Professional (CISSP)**
+
