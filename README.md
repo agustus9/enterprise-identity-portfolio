@@ -12,9 +12,14 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 * **Objective:** Automating lifecycle processes via Event Triggers and transforming HR data into normalized identity attributes.
 * **Key Skills:** JSON Transforms, Lifecycle State Management, Workflow triggers.
 
+### [04. Entra ID Zero Trust & Access Control](./04-Entra-Conditional-Access)
+* **Objective:** Engineering Conditional Access policies and Privileged Identity Management (PIM) for identity defense.
+* **Key Skills:** Entra ID, Just-in-Time access, MFA enforcement, Zero Trust (NIST 800-207).
+
 ### 03. Workday Integration *(Coming Soon)*
 * **Objective:** Managing HR-driven Joiner-Mover-Leaver (JML) automation with Source-to-Target identity profiles.
 * **Key Skills:** Attribute mapping, Account correlation rules, Birthright Access provisioning.
+
 
 
 ---
