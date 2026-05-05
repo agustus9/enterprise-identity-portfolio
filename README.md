@@ -16,9 +16,14 @@ Welcome to my Identity Governance & Administration (IGA) implementation portfoli
 * **Objective:** Engineering Conditional Access policies and Privileged Identity Management (PIM) for identity defense.
 * **Key Skills:** Entra ID, Just-in-Time access, MFA enforcement, Zero Trust (NIST 800-207).
 
+### [05. Okta Workforce Identity & SAML Federation](../IAM-Cloud-Security-Portfolio)
+* **Objective:** Configuring SP-Initiated SAML, automated Salesforce provisioning, and lifecycle management (LCM).
+* **Key Skills:** Okta Admin, SAML 2.0, SCIM, Lifecycle Management, SaaS Integration.
+
 ### 03. Workday Integration *(Coming Soon)*
 * **Objective:** Managing HR-driven Joiner-Mover-Leaver (JML) automation with Source-to-Target identity profiles.
 * **Key Skills:** Attribute mapping, Account correlation rules, Birthright Access provisioning.
+
 
 
 
