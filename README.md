@@ -60,5 +60,9 @@ I bridge the gap between legacy core infrastructure and cloud modern access solu
 * **SIEM & SecOps:** Splunk (SPL), Microsoft Sentinel (KQL)
 
 ### 📧 Connect with me
-* **[![LinkedIn](https://shields.io)](https://www.linkedin.com/in/arthur-m-24a2a81ba/)**
-* **[![Email](https://shields.io)](mailto:arthur366q@gmail.com)**
+* **<a href="https://linkedin.com" target="_blank">
+  <img src="https://shields.io" alt="LinkedIn Profile" height="40">
+</a>**
+* **<a href="mailto:arthur366q@gmail.com" target="_blank">
+  <img src="https://shields.io" alt="Email Address" height="40">
+</a>**
