@@ -1,0 +1,36 @@
+================================================================================
+RULE 1: MICROSOFT SENTINEL (KQL) - MULTI-SOURCE IDENTITY ESCALATION & ANOMALOUS LOGIN
+================================================================================
+// Description: Detects a highly critical SailPoint IIQ Role or capability modification 
+// immediately followed by a medium/high risk Entra ID sign-in by the same identity within a 1-hour window.
+
+let HighRiskIdentityModifications = 
+    Syslog
+
+    | filter ProcessName == "sailpoint.iiq"
+    | where Message contains "syslog:CapabilityAssignment" or Message contains "addRole"
+    | extend TargetUser = extract(@"targetIdentity=([^,\s]+)", 1, Message)
+
+    | extend AdminActor = extract(@"actor=([^,\s]+)", 1, Message)
+    | project TimeGenerated, AdminActor, TargetUser, Message;
+SigninLogs
+
+| where RiskLevelDuringSignIn in ("medium", "high")
+| join kind=inner (HighRiskIdentityModifications) on $left.UserPrincipalName == $right.TargetUser
+| where TimeGenerated between ((TimeGenerated1 - 1h) .. (TimeGenerated1 + 1h))
+
+| project TimeGenerated, UserPrincipalName, IPAddress, Location, AdminActor, Message
+| extend AlertString = strcat("CRITICAL: Identity ", UserPrincipalName, " modified in SailPoint IIQ and logged into cloud via high-risk context.")
+
+================================================================================
+RULE 2: SPLUNK (SPL) - OKTA MFA FATIGUE (PUSH INJECT REPEATED rejections)
+================================================================================
+index=security sourcetype="okta:system:log" 
+    (eventType="user.authentication.auth_via_mfa" AND displayMessage="REJECT") OR (eventType="user.authentication.auth_via_mfa" AND displayMessage="SUCCESS")
+
+| sort 0 + _time
+| streamwindow 5 current=true window=5m type=time global=false by actor.alternateId
+| stats count(eval(displayMessage="REJECT")) as RejectionCount, count(eval(displayMessage="SUCCESS")) as SuccessCount by actor.alternateId, client.ipAddress
+
+| where RejectionCount >= 3 AND SuccessCount == 1
+| eval Description="Potential MFA Fatigue attack successful. User rejected multiple pushes before capitulating."
