@@ -1,4 +1,4 @@
-# 🏢 Production Identity Architecture Lab
+# 🛠️ Hybrid Identity Architecture & Governance Engineering
 
 An engineering sandbox documenting hands-on deployments, custom configurations, and automated governance workflows across Enterprise IGA, Cloud Access Control, and SecOps telemetry modules.
 
