@@ -1,11 +1,13 @@
-# 🏢 Enterprise Identity Security Portfolio
+# 🏢 Production Identity Architecture Lab
 
-Welcome to my Identity Governance & Administration (IGA) and Access Management portfolio. This repository documents hands-on engineering scenarios, custom code, and deployment configurations within **SailPoint IdentityIQ (IIQ)**, **Microsoft Entra ID**, and **Okta**.
+An engineering sandbox documenting hands-on deployments, custom configurations, and automated governance workflows across Enterprise IGA, Cloud Access Control, and SecOps telemetry modules.
 
-## 🛠️ Global Architecture Focus
-* **Governance Platform:** SailPoint IdentityIQ (On-Premises Architecture / Compliance & Lifecycle Manager)
-* **Access Control:** Microsoft Entra ID & Okta Workforce Identity
-* **Security Analytics:** SIEM Log Aggregation & Threat Response
+
+| Domain | Platform | Core Focus |
+| :--- | :--- | :--- |
+| **Identity Governance** | SailPoint IdentityIQ | BeanShell API Engineering, Custom XML Workflows, Schema Mapping |
+| **Access Management** | Microsoft Entra ID & Okta | Zero Trust Baselines, PIM JIT Elevation, SAML/SCIM Federation |
+| **Security Analytics** | Multi-Vendor SIEM | Cross-Platform Telemetry Correlation, Threat Hunting Query Design |
 
 ---
 
