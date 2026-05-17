@@ -44,9 +44,6 @@ Welcome to my Identity Governance & Administration (IGA) and Access Management p
 * **Microsoft Security Operations Administrator (SC-200)**
 
 ## 🎓 Professional Development & Specialized Training
-* **SailPoint IGA/IdentityIQ Integration & Engineering**
-* **Sai Cyber Defence Training**
-
-* **Advanced SOC Operations & Offensive Methods**
-* **(Hands-on Training/Tech Geek)**
+* **SailPoint IGA/IdentityIQ Integration & Engineering/Sai Cyber Defence Training**
+* **Advanced SOC Operations & Offensive Methods/(Tech Geek Hands-on Training)**
 
