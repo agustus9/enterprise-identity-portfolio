@@ -1,0 +1,13 @@
+{
+    "name": "Format Department Name",
+    "type": "title",
+    "attributes": {
+        "input": {
+            "type": "accountAttribute",
+            "attributes": {
+                "sourceName": "HR Application Source",
+                "attributeName": "department"
+            }
+        }
+    }
+}
