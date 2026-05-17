@@ -37,6 +37,10 @@ An engineering sandbox documenting hands-on deployments, custom configurations, 
 * **Objective:** Developing correlation logic and advanced behavioral queries within enterprise SIEM platforms to monitor identity threats.
 * **Key Skills:** Splunk (SPL), Microsoft Sentinel (KQL), IBM QRadar (AQL), Log Analysis, Identity Security Monitoring.
 
+### [07. Identity Security Cloud (ISC) & API-Driven Transforms](./07-SailPoint-IAM)
+*   **Objective:** Designing and deploying cloud-native identity profile mappings and declarative string manipulations using REST API orchestration.
+*   **Key Skills:** JSON Transforms, Postman Orchestration, SailPoint SaaS v3/Beta APIs, VS Code Integrations, OAuth 2.0 Token Automation.
+
 ---
 ## 🎓 Certifications & Professional Alignment
 * **Certified Identity Governance Expert (CIGE)**
