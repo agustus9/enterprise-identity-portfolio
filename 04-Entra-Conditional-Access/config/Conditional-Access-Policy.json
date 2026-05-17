@@ -1,0 +1,60 @@
+{
+  "displayName": "Zero Trust Baseline: Require Phishing-Resistant MFA and Compliant Device for High-Risk Sessions",
+  "state": "enabledForReportingButNotEnforced",
+  "conditions": {
+    "userRiskLevels": [
+      "high",
+      "medium"
+    ],
+    "signInRiskLevels": [
+      "high",
+      "medium"
+    ],
+    "users": {
+      "includeUsers": [
+        "All"
+      ],
+      "excludeUsers": [
+        "breakglass-admin-911@enterprise.com"
+      ]
+    },
+    "applications": {
+      "includeApplications": [
+        "All"
+      ]
+    },
+    "locations": {
+      "includeLocations": [
+        "All"
+      ],
+      "excludeLocations": [
+        "AllTrustedLocations"
+      ]
+    },
+    "clientPlatforms": {
+      "includePlatforms": [
+        "all"
+      ]
+    }
+  },
+  "grantControls": {
+    "operator": "AND",
+    "builtInControls": [
+      "mfa",
+      "compliantDevice"
+    ],
+    "customAuthenticationFactors": [],
+    "authenticationStrength@odata.bind": "https://microsoft.com"
+  },
+  "sessionControls": {
+    "signInFrequency": {
+      "value": 8,
+      "type": "hours",
+      "isEnabled": true
+    },
+    "persistentBrowser": {
+      "mode": "never",
+      "isEnabled": true
+    }
+  }
+}
