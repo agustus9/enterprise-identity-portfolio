@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE BusinessProcess PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<BusinessProcess name="Custom Mover Approval Workflow" type="LCM">
+  
+  <Description>
+    Advanced lifecycle business process that routes manager approvals during internal employee transfers (Mover Event).
+  </Description>
+
+  <!-- Variable Definitions passed into the workflow engine -->
+  
+    <Description>The name of the identity undergoing the department change.</Description>
+  </Variable>
+  <Variable name="managerName" input="true">
+    <Description>The supervisor responsible for approving access changes.</Description>
+  </Variable>
+  <Variable name="project" output="true">
+    <Description>Compiled Provisioning Project containing the target system account plans.</Description>
+  </Variable>
+
+  <!-- STEP 1: Start and Initialization -->
+  <Step name="Start" icon="Start" posX="50" posY="100">
+    <Transition to="Audit Mover Event"/>
+  </Step>
+
+  <!-- STEP 2: Logic Validation -->
+  <Step name="Audit Mover Event" posX="180" posY="100">
+    <Script>
+      <Source>
+        
+      </Source>
+    </Script>
+    <Transition to="Manager Approval Step"/>
+  </Step>
+
+  <!-- STEP 3: Route Approval Notification to Manager -->
+  <Step name="Manager Approval Step" icon="Approval" posX="320" posY="100">
+    <Approval name="Manager Transfer Review" owner="ref:managerName" return="project">
+      
+      
+    </Approval>
+    <!-- Dynamic transition path based on manager's action -->
+    <Transition to="Execute Provisioning Plan" approved="true"/>
+    <Transition to="Cancel Lifecycle Process"/>
+  </Step>
+
+  <!-- STEP 4: Trigger Access Provisioning Engine -->
+  <Step name="Execute Provisioning Plan" icon="Task" posX="500" posY="50">
+    <Script>
+      <Source>
+        <![CDATA[
+        import sailpoint.api.Provisioner;
+        if (project != null) {
+            Provisioner p = new Provisioner(context);
+            p.execute(project);
+        }
+        ]]>
+      </Source>
+    </Script>
+    <Transition to="End"/>
+  </Step>
+
+  <!-- STEP 5: Rejection Path Handler -->
+  <Step name="Cancel Lifecycle Process" icon="Stop" posX="500" posY="180">
+    <Script>
+      <Source>
+        <![CDATA[
+        context.decache(); // Clean context cache since request was aborted
+        ]]>
+      </Source>
+    </Script>
+    <Transition to="End"/>
+  </Step>
+
+  <!-- STEP 6: Core Exit termination -->
+  <Step name="End" icon="Stop" posX="650" posY="100"/>
+
+</BusinessProcess>
