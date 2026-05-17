@@ -1,0 +1,48 @@
+{
+  "label": "Corporate Salesforce CRM Cloud",
+  "visibility": {
+    "autoLaunch": false,
+    "hide": {
+      "iOS": false,
+      "web": false
+    }
+  },
+  "features": [
+    "SAML_2_0",
+    "PROVISIONING"
+  ],
+  "signOn": {
+    "mode": "SAML_2_0",
+    "idpIssuer": "http://okta.com{org.externalKey}",
+    "audience": "https://salesforce.com",
+    "recipient": "https://salesforce.com/login.jsp",
+    "destination": "https://salesforce.com/login.jsp",
+    "subjectNameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+    "subjectNameIdTemplate": "${user.email}",
+    "attributeStatements": [
+      {
+        "name": "FirstName",
+        "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+        "values": [
+          "${user.firstName}"
+        ]
+      },
+      {
+        "name": "LastName",
+        "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+        "values": [
+          "${user.lastName}"
+        ]
+      }
+    ]
+  },
+  "provisioning": {
+    "action": "AUTO_PROVISION",
+    "scimVersion": "2.0",
+    "lifecycleRules": {
+      "createUsers": true,
+      "updateAttributes": true,
+      "deactivateUsers": true
+    }
+  }
+}
