@@ -51,6 +51,7 @@ An engineering sandbox documenting hands-on deployments, custom configurations, 
 
 ## 🎓 Professional Development & Specialized Training
 * **SailPoint IGA/IdentityIQ Integration & Engineering/Sai Cyber Defence Training**
+* **Microsoft Identity and Access Administrator/AllPro Training**
 * **Advanced SOC Operations & Offensive Methods/(Tech Geek Hands-on Training)**
 
 
