@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application name="Corporate Active Directory" type="Active Directory - Direct">
+  
+  <Description>
+    Production-ready core connection architecture for enterprise Active Directory schema parsing and account aggregation.
+  </Description>
+  
+  <Attributes>
+    <Map>
+      <!-- Connection Settings (To be updated with environment-specific values) -->
+      <entry key="domainController" value="dc01.enterprise.local"/>
+      <entry key="useSSL" value="true"/>
+      <entry key="port" value="636"/>
+      <entry key="searchDN" value="OU=User Accounts,DC=enterprise,DC=local"/>
+      <entry key="groupSearchDN" value="OU=Security Groups,DC=enterprise,DC=local"/>
+      
+      <!-- Safe Optimization Settings -->
+      <entry key="pageSize" value="100"/>
+      <entry key="iterateSearchFilter" value="(objectClass=user)"/>
+    </Map>
+  </Attributes>
+
+  <!-- Account Schema Definitions -->
+  <Schemas>
+    
+      <AttributeDefinition name="sAMAccountName" type="string" description="The unique system account handle."/>
+      <AttributeDefinition name="cn" type="string" description="Common name display profile."/>
+      <AttributeDefinition name="mail" type="string" description="Primary email address used for correlation mapping."/>
+      <AttributeDefinition name="employeeID" type="string" description="Corporate unique master employee serial number."/>
+      <AttributeDefinition name="memberOf" type="string" multi="true" entitlement="true" description="Security group associations."/>
+    </Schema>
+
+    <!-- Group Schema Definitions for Entitlement Aggregation -->
+    
+      <AttributeDefinition name="distinguishedName" type="string" description="Full LDAP path identifier."/>
+      <AttributeDefinition name="cn" type="string" description="Name of the security group."/>
+      <AttributeDefinition name="description" type="string" description="Business description of access scope."/>
+    </Schema>
+  </Schemas>
+
+  <!-- Rule-Based Account Correlation Framework Configuration -->
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="Default Email and EmployeeID Correlation"/>
+  </AccountCorrelationConfig>
+
+</Application>
