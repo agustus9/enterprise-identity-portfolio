@@ -47,3 +47,18 @@ Welcome to my Identity Governance & Administration (IGA) and Access Management p
 * **SailPoint IGA/IdentityIQ Integration & Engineering/Sai Cyber Defence Training**
 * **Advanced SOC Operations & Offensive Methods/(Tech Geek Hands-on Training)**
 
+
+
+## 👋 About Me
+Enterprise Identity Security Engineer specializing in **Identity Governance & Administration (IGA)** and **Access Management**. 
+
+I bridge the gap between legacy core infrastructure and cloud modern access solutions by deploying automated lifecycle controls, secure federation, and security operations log analysis.
+
+### 🛠️ Core Tech Stack
+* **IGA Engine:** SailPoint IdentityIQ (BeanShell Rules, XML Workflows, Application Schemas)
+* **Access & AM:** Microsoft Entra ID (PIM, Conditional Access), Okta (LCM, SAML 2.0, SCIM)
+* **SIEM & SecOps:** Splunk (SPL), Microsoft Sentinel (KQL)
+
+### 📧 Connect with me
+* 💼 **LinkedIn:** [[[Insert Link]](https://www.linkedin.com/in/arthur-m-24a2a81ba/)](https://www.linkedin.com/in/arthur-m-24a2a81ba/)
+* ✉️ **Email:** [Insert Email]
