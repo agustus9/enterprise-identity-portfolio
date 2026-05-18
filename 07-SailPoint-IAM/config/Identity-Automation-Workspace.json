@@ -1,0 +1,86 @@
+{
+  "workspaceMetadata": {
+    "developmentEnvironment": "VS Code (Visual Studio Code)",
+    "testingRunner": "Postman Client v2.1.0 Standard",
+    "description": "This structural template models local VS Code JavaScript transform development before deployment and testing via the Postman runtime interface."
+  },
+  
+  "vscode_local_engineering_scripts": {
+    "transform_01_normalize_upn_script": {
+      "language": "javascript",
+      "purpose": "VS Code scratchpad script to parse messy HR names and build a standardized corporate UserPrincipalName (UPN).",
+      "sourceCode": "function generateUpn(firstName, lastName, corporateSuffix) {\n    if (!firstName || !lastName) return null;\n    \n    // Remove special characters, convert to lowercase, and concatenate\n    let cleanFirst = firstName.trim().toLowerCase().replace(/[^a-zA-Z0-9]/g, '');\n    let cleanLast = lastName.trim().toLowerCase().replace(/[^a-zA-Z0-9]/g, '');\n    \n    return cleanFirst + '.' + cleanLast + '@' + corporateSuffix;\n}\n\n// Local VS Code unit testing verification baseline\nlet testUpn = generateUpn(' Arthur ', 'M.', 'enterprise.com');\nconsole.log('Processed Local Target Output: ' + testUpn);"
+    },
+    
+    "transform_02_lifecycle_state_resolver": {
+      "language": "javascript",
+      "purpose": "Determines whether an identity is active based on their termination date attribute.",
+      "sourceCode": "function resolveLifecycleState(terminationDateStr) {\n    if (!terminationDateStr) return 'active';\n    \n    let terminationDate = new Date(terminationDateStr);\n    let currentDate = new Date();\n    \n    // If current system date is past termination date, flag account for deprovisioning\n    return (currentDate >= terminationDate) ? 'terminated' : 'active';\n}"
+    }
+  },
+
+  "postman_collection_orchestration": {
+    "info": {
+      "name": "Identity Core Management & Advanced Transform Testing Suite",
+      "schema": "https://getpostman.com"
+    },
+    "item": [
+      {
+        "name": "Trigger Identity Attribute Transformation Pipeline",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{iam_access_bearer_token}}",
+              "type": "text"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"schemas\": [\"urn:ietf:params:scim:schemas:core:2.0:User\"],\n  \"userName\": \"arthur.m@enterprise.com\",\n  \"name\": {\n    \"formatted\": \"Arthur M.\",\n    \"familyName\": \"M.\",\n    \"givenName\": \"Arthur\"\n  },\n  \"emails\": [\n    {\n      \"value\": \"arthur366q@gmail.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ],\n  \"urn:ietf:params:scim:schemas:extension:enterprise:2.0:User\": {\n    \"department\": \"Identity Engineering\",\n    \"lifecycleState\": \"active\"\n  }\n}"
+          },
+          "url": {
+            "raw": "https://{{iam_tenant_base_url}}/scim/v2/Users",
+            "protocol": "https",
+            "host": [
+              "{{iam_tenant_base_url}}"
+            ],
+            "path": [
+              "scim",
+              "v2",
+              "Users"
+            ]
+          },
+          "description": "Pushes the structured JSON object payload directly to the core identity endpoint."
+        },
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "exec": [
+                "// 1. Postman Runtime Assertion Tests",
+                "pm.test('System Action Complete: Request successfully creates identity mapping', function () {",
+                "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                "});",
+                "",
+                "// 2. Data Validation post-execution run",
+                "let responseData = pm.response.json();",
+                "pm.test('Integrity Audit: Active state flag successfully verified', function () {",
+                "    let state = responseData['urn:ietf:params:scim:schemas:extension:enterprise:2.0:User'].lifecycleState;",
+                "    pm.expect(state).to.eql('active');",
+                "});"
+              ],
+              "type": "text/javascript"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
