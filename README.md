@@ -46,12 +46,11 @@ An engineering sandbox documenting hands-on deployments, custom configurations, 
 * **Certified Identity Governance Expert (CIGE)**
 * **Certified Identity and Access Manager (CIAM)**
 * **SailPoint Identity Security Leader** 
-* **Microsoft Identity and Access Administrator (SC-300)**
 * **Microsoft Security Operations Administrator (SC-200)**
 
 ## 🎓 Professional Development & Specialized Training
-* **SailPoint IGA/IdentityIQ Integration & Engineering/Sai Cyber Defence Training**
-* **Microsoft Identity and Access Administrator/AllPro Training**
+* **SailPoint IGA/IdentityIQ Integration & Engineering/(Sai Cyber Defence Training)**
+* **Microsoft Identity and Access Administrator/(AllPro Training)**
 * **Advanced SOC Operations & Offensive Methods/(Tech Geek Hands-on Training)**
 
 
